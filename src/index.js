@@ -2,8 +2,7 @@ const axios = require('axios').default;
 const clc = require('cli-color');
 const prompt = require('prompt-sync')();
 
-
-
+// initialize 
 
 class Program {
     constructor() { // endpoints
@@ -12,7 +11,7 @@ class Program {
         this.aes = 'https://lunar-api-backend-host.herokuapp.com/api/v1/aes/keys';
     };
 
-    menu() {
+    menu() { // show start menu
         console.log(clc.green('Hey, welcome to the MultiVersus Searcher!\nThis program allow you to get information about MultiVersus data.\n'));
         console.log(clc.yellow('1') + clc.green(' - Search for a specific item'));
         console.log(clc.yellow('2') + clc.green(' - Get for all items data'));
@@ -20,7 +19,7 @@ class Program {
         this.getChoice();
     };
 
-    getChoice() {
+    getChoice() { // get the numer of choice 
         var choice = prompt(clc.yellow('Please enter your choice: '));
 
         if (choice == 1) {
@@ -34,11 +33,11 @@ class Program {
         }
         else {
             console.log(clc.red('Invalid choice'));
-            this.getChoice();
+            this.getChoice(); // in case the choice is invalid the program retry to get it
         }
     };
 
-    searchItem() {
+    searchItem() { // search an item
         let name = prompt('Enter the cosmetic name: ');
         const cosmeticName = name.toLowerCase();
         const x = [];
@@ -81,7 +80,7 @@ class Program {
         )
     };
 
-    allItems() {
+    allItems() { // print all cosmetics
         axios (
             {
                 method: 'get',
@@ -110,7 +109,7 @@ class Program {
         )
     };
 
-    aesKeys() {
+    aesKeys() { // get current AES Key
         axios (
             {
                 method: 'get',
