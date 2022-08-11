@@ -6,8 +6,8 @@
 ## Usage
 
 - Download node [here](https://nodejs.org/en/) 
-- Open a terminal in the folder `src`
-- Use the command `npm install` for install all packages and after `npm .` or `npm index.js` for run the program
+- Open `InstallPackages.bat` for install all packages
+- Open `RunProject.bat` for run the program
 
 ## Features
 
