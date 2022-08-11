@@ -6,8 +6,8 @@
 ## Usage
 
 - Download node [here](https://nodejs.org/en/) 
-- Open `InstallPackages.bat` for install all packages
-- Open `RunProject.bat` for run the program
+- Open `InstallPackages.bat` to install all packages
+- Open `RunProject.bat` to run the program
 
 ## Features
 
