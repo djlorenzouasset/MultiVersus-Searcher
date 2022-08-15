@@ -9,6 +9,7 @@ class Program {
         this.search = 'https://api.lunarmv.ml/api/v1/search/';
         this.all = 'https://api.lunarmv.ml/api/v1/allCosmetics';
         this.aes = 'https://api.lunarmv.ml/api/v1/aes/keys';
+        this.profile = 'https://api.lunarmv.ml/api/v1/accounts/';
     };
 
     menu() { // show start menu
@@ -16,6 +17,7 @@ class Program {
         console.log(clc.yellow('1') + clc.green(' - Search for a specific item'));
         console.log(clc.yellow('2') + clc.green(' - Get for all items data'));
         console.log(clc.yellow('3') + clc.green(' - Get AES keys\n'));
+        console.log(clc.yellow('4') + clc.green(' - Get profile data by name'));
         this.getChoice();
     };
 
@@ -30,6 +32,9 @@ class Program {
         }
         else if (choice == 3) {
             this.aesKeys();
+        }
+        else if (choice == 4) {
+            this.profileData();
         }
         else {
             console.log(clc.red('Invalid choice'));
@@ -128,6 +133,44 @@ class Program {
             }
         )
     };
+
+    getProfile() {
+        let profile = prompt('Enter the profile name: ');
+
+        if (profile == '') {
+            console.log(clc.red('Invalid profile name'));
+            this.getProfile();
+        }
+
+        else {
+            axios (
+                {
+                    method: 'get',
+                    url: this.profile + profile
+                }
+            )
+            .then(
+                function(res) {
+                    if (!(res.data.results.length == 0)) {
+                        var id = res.data.results[0].result.account_id;
+                        var name = profile;
+                        var last_login = res.data.results[0].result.last_login;
+                        var created = res.data.results[0].result.created_at;
+
+                        console.log(clc.green('Profile name: ') + clc.cyan(name));
+                        console.log(clc.green('Profile id: ') + clc.cyan(id));
+                        console.log(clc.green('Last login: ') + clc.cyan(last_login));
+                        console.log(clc.green('Created at: ') + clc.cyan(created));
+                    }
+                }
+            )
+            .catch(
+                function(err) {
+                    console.log(clc.red(err));
+                }
+            )
+        }
+    }
 
 }
 
