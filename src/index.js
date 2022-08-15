@@ -34,7 +34,7 @@ class Program {
             this.aesKeys();
         }
         else if (choice == 4) {
-            this.profileData();
+            this.getProfile();
         }
         else {
             console.log(clc.red('Invalid choice'));
