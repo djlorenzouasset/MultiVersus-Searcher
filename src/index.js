@@ -16,8 +16,8 @@ class Program {
         console.log(clc.green('Hey, welcome to the MultiVersus Searcher!\nThis program allow you to get information about MultiVersus data.\n'));
         console.log(clc.yellow('1') + clc.green(' - Search for a specific item'));
         console.log(clc.yellow('2') + clc.green(' - Get for all items data'));
-        console.log(clc.yellow('3') + clc.green(' - Get AES keys\n'));
-        console.log(clc.yellow('4') + clc.green(' - Get profile data by name'));
+        console.log(clc.yellow('3') + clc.green(' - Get AES keys'));
+        console.log(clc.yellow('4') + clc.green(' - Get profile data by name\n'));
         this.getChoice();
     };
 
