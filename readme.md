@@ -11,6 +11,5 @@
 
 ## Features
 
-- Added start menù 
-- Added All cosmetics and Aes Key commands
-- Fixed some bugs
+- Changed API domain for all links
+- Added Profile Search command
