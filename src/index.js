@@ -6,9 +6,9 @@ const prompt = require('prompt-sync')();
 
 class Program {
     constructor() { // endpoints
-        this.search = 'https://lunar-api-backend-host.herokuapp.com/api/v1/search/';
-        this.all = 'https://lunar-api-backend-host.herokuapp.com/api/v1/allCosmetics';
-        this.aes = 'https://lunar-api-backend-host.herokuapp.com/api/v1/aes/keys';
+        this.search = 'https://api.lunarmv.ml/api/v1/search/';
+        this.all = 'https://api.lunarmv.ml/api/v1/allCosmetics';
+        this.aes = 'https://api.lunarmv.ml/api/v1/aes/keys';
     };
 
     menu() { // show start menu
